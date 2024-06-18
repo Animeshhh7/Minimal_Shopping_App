@@ -1,10 +1,17 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:quick_cart/themes/light_mode.dart'; 
 import 'pages/intro_page.dart';
 
 // Entry point of the app
 void main() {
-  runApp(const MyApp()); 
+  runApp(
+   ChangeNotifierProvider(
+    create: (context) => Shop(), 
+    child: const MyApp(),
+    ),
+  ); 
 }
 
 // Main application widget
